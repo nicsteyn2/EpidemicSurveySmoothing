@@ -1,6 +1,6 @@
 # Data
 
-The REACT-1 data is stored in two files. ``reactdata.csv`` contains daily swabs taken, number of positive swabs, weighted prevalence (assuming survey weights are valid on a daily basis), and sum of squared weights. ``reactdata_variants.csv`` contains daily swabs taken, the total number of positive swabs, the number of swabs successfully sequenced, and the number of swabs positive for the given variant of interest.
+The REACT-1 data are stored in two files. ``reactdata.csv`` contains daily swabs taken, number of positive swabs, weighted prevalence (assuming survey weights are valid on a daily basis), and sum of squared weights. ``reactdata_variants.csv`` contains daily swabs taken, the total number of positive swabs, the number of swabs successfully sequenced, and the number of swabs positive for the given variant of interest.
 
 The ``PCR-curves`` folder contains three estimates of the RT-PCR test sensitivity functions:
 
