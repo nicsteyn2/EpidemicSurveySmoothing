@@ -52,30 +52,6 @@ end
 
 
 
-# #TODO: Update with the new sampling regime
-# function simulateAR1(; ϕ = 0.9, σ = 0.01, P0 = 0.01, r0 = 0, tMax = 100, Pt_max=0.3, Pt_min=0.005, rt_max=0.3, rt_min=-0.3)
-
-#     rt = zeros(tMax)
-#     Pt = zeros(tMax)
-
-#     # Simulate the epidemic
-#     tt = 1
-#     rt[tt] = rand(Truncated(Normal(r0, σ), rt_min, rt_max))
-#     Pt[tt] = P0 * exp(rt[tt])
-
-#     for tt = 2:tMax
-#         rt_max_t = min(log(Pt_max/Pt[tt-1]), rt_max)
-#         rt_min_t = max(log(Pt_min/Pt[tt-1]), rt_min)
-#         rt[tt] = rand(Truncated(Normal(ϕ * rt[tt-1], σ), rt_min_t, rt_max_t))
-#         Pt[tt] = Pt[tt-1] * exp(rt[tt])
-#     end
-
-#     return(rt, Pt)
-
-# end
-
-
-
 # ---------------------------------------------------------------------
 # ------------------ Survey simulation functions ----------------------
 # ---------------------------------------------------------------------
