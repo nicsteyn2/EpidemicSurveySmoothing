@@ -3,3 +3,4 @@ hpc.jl
 hpc.sh
 playground.*
 *.nosync
+.vscode

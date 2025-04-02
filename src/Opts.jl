@@ -28,8 +28,23 @@ function fetchDefaultOpts(model)
         opts["paramLimits"] = [(0, 0.2)]
         opts["propStdDevInit"] = [0.01]
         opts["paramNames"] = ["sigma"]
+    elseif model == "betabinom"
+        # Set beta-binomial specific options
+        opts["paramPriors"] = [Uniform(0, 0.2), Uniform(0, 0.01)]
+        opts["initialParamSamplers"] = [Uniform(0, 0.2), Uniform(0, 1e-3)]
+        opts["paramLimits"] = [(0, 0.2), (0, 0.01)]
+        opts["propStdDevInit"] = [0.01, 5e-5]
+        opts["paramNames"] = ["sigma", "rho"]
+    elseif model == "weighted"
+        # Set weighted model specific options
+        opts["paramPriors"] = [Uniform(0, 0.2), Uniform(0.1, 10)]
+        opts["initialParamSamplers"] = [Uniform(0.005, 0.015), Uniform(0.67, 1.5)]
+        opts["paramLimits"] = [(0, 0.2), (0.1, 10)]
+        opts["propStdDevInit"] = [0.005, 0.1]
+        opts["paramNames"] = ["sigma", "c"]
+        opts["boundPrevalence"] = false # Useful in low-data scenarios to stop the model getting "trapped" at low prevalence    end
     end
 
     return(opts)
-
+    
 end
