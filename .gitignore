@@ -1,0 +1,5 @@
+*.DS_Store
+hpc.jl
+hpc.sh
+playground.*
+*.nosync
