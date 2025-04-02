@@ -1,4 +1,6 @@
 
+using Distributions
+
 function fetchDefaultOpts(model)
     
     opts = Dict(

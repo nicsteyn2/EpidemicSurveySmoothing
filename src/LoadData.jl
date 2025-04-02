@@ -2,10 +2,10 @@
 using Dates, CSV, DataFrames
 
 
-function loadReactData(min_round, max_round)
+function loadReactData(min_round, max_round; directory="data/")
 
     # Load the file, correctly set the dates, filter by round, and set number of days since first obs
-    df_raw = DataFrame(CSV.File("data/reactdata.csv"))
+    df_raw = DataFrame(CSV.File(directory * "reactdata.csv"))
     df_raw = df_raw[(df_raw.round.>=min_round) .& (df_raw.round.<=max_round),:]
     df_raw.t = Dates.value.(df_raw.date - minimum(df_raw.date)) .+ 1
 
@@ -38,7 +38,7 @@ end
 function loadVariantData(min_round, max_round)
 
     # Load the file, correctly set the dates, filter by round, and set number of days since first obs
-    df_raw = DataFrame(CSV.File("data/reactdata_variants.csv"))
+    df_raw = DataFrame(CSV.File(directory * "reactdata_variants.csv"))
     df_raw = df_raw[(df_raw.round.>=min_round) .& (df_raw.round.<=max_round),:]
     df_raw.t = Dates.value.(df_raw.date - minimum(df_raw.date)) .+ 1
 

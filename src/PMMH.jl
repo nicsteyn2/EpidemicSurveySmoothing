@@ -69,7 +69,7 @@ function PMMH(bootstrapFilter::Function, Y::DataFrame, opts::Dict; verbose=false
             change = frobeniusNew / frobeniusOld
             if verbose
                 println("Old frobenius: $frobeniusOld, new frobenius: $frobeniusNew, change: $change")
-                display(covEst)
+                println("Approx covariance matrix of parameter samples: $covEst")
             end
 
             # Save diagnostics
@@ -105,7 +105,7 @@ function PMMH(bootstrapFilter::Function, Y::DataFrame, opts::Dict; verbose=false
             (meanEst, covEst) = updateCovariance(meanEst, covEst, θall_tmp, 100*ii, chunkSize)
             if verbose
                 println("Frobenius of covariance matrix: $(norm(covEst))")
-                display(covEst)
+                println("Approx covariance matrix of parameter samples: $covEst")
             end
 
             # Fetch max Rhat and min ESS
