@@ -4,7 +4,7 @@ library(cmdstanr)
 library(splines)
 
 
-# # # For testing
+# # For testing
 # df = read.csv("data/reactdata.csv") %>%
 #   filter(round >= 17 & round <= 19) %>%
 #   select(round, date, nSamples, nPos) %>%
