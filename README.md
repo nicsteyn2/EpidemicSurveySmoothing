@@ -13,3 +13,7 @@ The remainder of the repository is organized as follows:
 
 ![Example output](paper/figures/3-react.png)
 *Results from fitting the three methods to data from the REACT-1 prevalence survey.*
+
+### Remaining todo list:
+
+- \#TODO: Finish S8 timing code and results, and tidy up results folder!
