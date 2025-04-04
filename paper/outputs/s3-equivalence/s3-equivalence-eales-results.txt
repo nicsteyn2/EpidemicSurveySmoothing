@@ -1,0 +1,82 @@
+
+
+Eales method, betabinom, target_dist = 1...
+
+Fitting took 8m 45s
+Max Rhat: 1.038624
+Min ESS: 273.395490
+
+
+# A tibble: 2 × 8
+  variable     mean   median        sd     lower    upper  rhat ess_bulk
+  <chr>       <num>    <num>     <num>     <num>    <num> <num>    <num>
+1 sigma    0.0144   0.0138   0.00370   0.00890   0.0234    1.01     286.
+2 rho      0.000179 0.000174 0.0000578 0.0000830 0.000303  1.00     652.
+
+
+# A tibble: 1 × 8
+  variable   mean median      sd   lower  upper  rhat ess_bulk
+  <chr>     <num>  <num>   <num>   <num>  <num> <num>    <num>
+1 sigma    0.0144 0.0138 0.00370 0.00890 0.0234  1.01     286.
+
+
+
+Eales method (no splines)...
+
+Fitting took 8m 57s
+Max Rhat: 1.026791
+Min ESS: 209.981047
+
+
+# A tibble: 2 × 10
+  variable     mean   median        sd     lower    upper  rhat ess_bulk     t  crps
+  <chr>       <num>    <num>     <num>     <num>    <num> <num>    <num> <num> <num>
+1 sigma    0.0140   0.0134   0.00366   0.00867   0.0226    1.00     237.    NA    NA
+2 rho      0.000180 0.000173 0.0000585 0.0000903 0.000322  1.00     691.    NA    NA
+
+
+
+
+Eales method, betabinom, target_dist = 5...
+
+Fitting took 5m 13s
+Max Rhat: 1.021686
+Min ESS: 229.218051
+
+
+# A tibble: 2 × 8
+  variable     mean   median        sd     lower    upper  rhat ess_bulk
+  <chr>       <num>    <num>     <num>     <num>    <num> <num>    <num>
+1 sigma    0.158    0.154    0.0384    0.0983    0.245     1.01     321.
+2 rho      0.000194 0.000187 0.0000579 0.0000996 0.000317  1.00     906.
+
+
+# A tibble: 1 × 8
+  variable   mean median     sd  lower upper  rhat ess_bulk
+  <chr>     <num>  <num>  <num>  <num> <num> <num>    <num>
+1 sigma    0.0712  0.154 0.0384 0.0442 0.110  1.01     321.
+
+
+
+
+Eales method, binomial, target_dist = 5...
+
+Fitting took 1m 59s
+Max Rhat: 1.056679
+Min ESS: 58.654580
+
+
+# A tibble: 1 × 8
+  variable  mean median     sd lower upper  rhat ess_bulk
+  <chr>    <num>  <num>  <num> <num> <num> <num>    <num>
+1 sigma    0.223  0.209 0.0662 0.139 0.390  1.06     58.7
+
+
+# A tibble: 1 × 8
+  variable  mean median     sd  lower upper  rhat ess_bulk
+  <chr>    <num>  <num>  <num>  <num> <num> <num>    <num>
+1 sigma    0.100  0.209 0.0662 0.0625 0.175  1.06     58.7
+
+
+
+
