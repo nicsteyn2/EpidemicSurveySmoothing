@@ -4,3 +4,4 @@ hpc.sh
 playground.*
 *.nosync
 .vscode
+tmp.txt

@@ -73,7 +73,6 @@ custom_theme_params = theme_bw() + theme(legend.position="none", axis.text.x=ele
 plt_r0_param = ggplot(df_r0_params) +
   geom_point(aes(x=prior, y=m, color=prior)) +
   geom_errorbar(aes(x=prior, ymin=l, ymax=u, color=prior), width=0.2) +
-  geom_hline(yintercept=0.01, linetype="dashed", color="gray") +
   custom_theme_params +
   ylim(c(0, 0.03)) + ylab("sigma") + xlab("")
 
