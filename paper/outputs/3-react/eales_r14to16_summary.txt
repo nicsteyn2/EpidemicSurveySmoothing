@@ -1,0 +1,15 @@
+Summary of results...
+
+Time taken = 43.31s
+
+Sampling iterations = 300
+Warmup iterations = 200
+
+Max Rhat = 1.01
+Min ESS = 245.03
+
+sigma = 0.15 (0.06, 0.3)
+rho = 0.98 (0.075, 2.6)
+
+Coverage of nPos = 97.01%
+Mean width of credible intervals on Pt = 0.34%

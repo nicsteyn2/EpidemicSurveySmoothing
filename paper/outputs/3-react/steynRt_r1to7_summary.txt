@@ -1,0 +1,12 @@
+Summary of results...
+
+Time taken = 188.90910696983337 seconds
+
+Max Rhat = 1.04
+Min ESS = 105.88
+
+sigma = 0.063 (0.034, 0.12)
+rho x10^4 = 2.6 (1.8, 3.8)
+
+Coverage of nPos = 96.6%
+Mean width of credible intervals on Pt (%) = 0.1359

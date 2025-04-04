@@ -45,6 +45,16 @@ function fetchDefaultOpts(model)
         opts["propStdDevInit"] = [0.005, 0.1]
         opts["paramNames"] = ["sigma", "c"]
         opts["boundPrevalence"] = false # Useful in low-data scenarios to stop the model getting "trapped" at low prevalence    end
+    elseif model == "RtModel"
+        opts["stateNames"] = ["Rt", "It", "Pt"]
+        opts["paramPriors"] = [Uniform(0, 1), Uniform(0, 0.01)]
+        opts["initPeriod"] = 10
+        opts["initialParamSamplers"] = [Uniform(0.05, 0.2), Uniform(1e-4, 4e-4)]
+        opts["paramLimits"] = [(0, 1), (0, 0.01)]
+        opts["propStdDevInit"] = [0.04, 1e-4]
+        opts["paramNames"] = ["sigma_R", "rho"]
+    else
+        error("Invalid model name.")
     end
 
     return(opts)
