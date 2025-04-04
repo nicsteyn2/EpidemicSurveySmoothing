@@ -136,7 +136,7 @@ plt = ggplot(df_out %>% filter(variable %in% c("Pt", "rt"))) +
 plt
 
 # Save output
-write.csv(df_out, "paper/outputs/simulations_eales.csv", row.names=FALSE)
+write.csv(df_out, "paper/outputs/2-simcompare/simulations_eales.csv", row.names=FALSE)
 
 
 
