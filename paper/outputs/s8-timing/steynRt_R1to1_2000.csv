@@ -1,0 +1,2 @@
+start_round,end_round,iter,success,maxrhat,miness,time_taken,num_obs,num_days
+1.0,1.0,1,true,1.0359749994696763,124.7986184708776,53.39223790168762,32,32

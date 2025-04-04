@@ -29,10 +29,10 @@ Min ESS: 209.981047
 
 
 # A tibble: 2 × 10
-  variable     mean   median        sd     lower    upper  rhat ess_bulk     t  crps
-  <chr>       <num>    <num>     <num>     <num>    <num> <num>    <num> <num> <num>
-1 sigma    0.0140   0.0134   0.00366   0.00867   0.0226    1.00     237.    NA    NA
-2 rho      0.000180 0.000173 0.0000585 0.0000903 0.000322  1.00     691.    NA    NA
+  variable     mean   median        sd     lower    upper  rhat ess_bulk     t
+  <chr>       <num>    <num>     <num>     <num>    <num> <num>    <num> <num>
+1 sigma    0.0140   0.0134   0.00366   0.00867   0.0226    1.00     237.    NA
+2 rho      0.000180 0.000173 0.0000585 0.0000903 0.000322  1.00     691.    NA
 
 
 
