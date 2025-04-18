@@ -12,11 +12,11 @@ df_eales = read.csv("paper/outputs/2-simcompare/simulations_eales.csv")
 vars = c("rt", "Pt", "nPos")
 
 df_data = rbind(
-  df_steyn %>% filter(variable %in% vars) %>% mutate(simulation="Novel"),
+  df_steyn %>% filter(variable %in% vars) %>% mutate(simulation="SIMPLE"),
   df_abbott %>% filter(variable %in% vars) %>% mutate(simulation="Abbott"),
   df_eales %>% filter(variable %in% vars) %>% mutate(simulation="Eales")
 ) %>%
-  mutate(simulation=factor(simulation, levels=c("Novel", "Eales", "Abbott")))
+  mutate(simulation=factor(simulation, levels=c("SIMPLE", "Eales", "Abbott")))
 
 rm(df_steyn, df_abbott, df_eales)
 
@@ -31,8 +31,8 @@ df_states = rbind(df_steyn_states %>% select(t, mean, lower, upper, variable, me
                   df_abbott %>% select(t, mean, lower, upper, variable, method, simulation, iter),
                   df_eales %>% select(t, mean, lower, upper, variable, method, simulation, iter)) %>%
   filter(variable %in% vars) %>%
-  mutate(method = case_when(method=="Steyn" ~ "Novel", TRUE ~ method),
-         simulation = case_when(simulation=="Steyn" ~ "Novel", TRUE ~ simulation)) %>%
+  mutate(method = case_when(method=="Steyn" ~ "SIMPLE", TRUE ~ method),
+         simulation = case_when(simulation=="Steyn" ~ "SIMPLE", TRUE ~ simulation)) %>%
 left_join(df_data %>% rename(TrueValue=value), by=c("t", "variable", "simulation", "iter"))
 
 # Calculate swab positivity (instead of number of positive swabs)
@@ -54,8 +54,8 @@ df_coverage = df_states %>%
   mutate(inPredInterval = (TrueValue >= lower) & (TrueValue <= upper)) %>%
   group_by(simulation, variable, iter, method) %>%
   summarise(coverage = mean(inPredInterval, na.rm=TRUE))  %>%
-  mutate(simulation = factor(simulation, levels=c("Novel", "Eales", "Abbott")),
-         method = factor(method, levels=c("Novel", "Eales", "Abbott")),
+  mutate(simulation = factor(simulation, levels=c("SIMPLE", "Eales", "Abbott")),
+         method = factor(method, levels=c("SIMPLE", "Eales", "Abbott")),
          variable = case_when(variable == "rt" ~ "Growth rate\n(per day)",
                               variable == "Pt" ~ "Prevalence (%)",
                               variable == "nPos" ~ "Observed\n positive swabs",
@@ -68,8 +68,8 @@ df_width = df_states %>%
   mutate(width = upper - lower) %>%
   group_by(simulation, variable, iter, method) %>%
   summarise(mean_width = mean(width, na.rm=TRUE)) %>%
-  mutate(simulation = factor(simulation, levels=c("Novel", "Eales", "Abbott")),
-         method = factor(method, levels=c("Novel", "Eales", "Abbott")),
+  mutate(simulation = factor(simulation, levels=c("SIMPLE", "Eales", "Abbott")),
+         method = factor(method, levels=c("SIMPLE", "Eales", "Abbott")),
          variable = case_when(variable == "rt" ~ "Growth rate\n(per day)",
                               variable == "Pt" ~ "Prevalence (%)",
                               variable == "nPos" ~ "Observed\n positive swabs",

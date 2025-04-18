@@ -16,7 +16,7 @@ df_data$agrestiUpper = agresticoull[,3]
 
 # Load estimates
 df_steyn = read.csv("paper/outputs/3-react/steyn_r1to19_states.csv") %>%
-  mutate(Method="Novel", date=as.Date(date)) %>%
+  mutate(Method="SIMPLE", date=as.Date(date)) %>%
   select(variable, date, mean, lower, upper, Method)  %>%
   filter(variable %in% c("rt", "Pt", "nPos"))
 
@@ -33,7 +33,7 @@ df_abbott = read.csv("paper/outputs/3-react/abbott_r1to19_results.csv") %>%
 # Combine
 df = rbind(df_steyn, df_eales, df_abbott) %>% 
   left_join(df_data %>% select(date, nSamples, nPos, obsPos, round, agrestiLower, agrestiUpper), by="date") %>%
-  mutate(Method = factor(Method, levels=c("Novel", "Eales", "Abbott")))
+  mutate(Method = factor(Method, levels=c("SIMPLE", "Eales", "Abbott")))
 
 # Calculate observed swab positivity and join onto main
 df_swabpos = df %>%

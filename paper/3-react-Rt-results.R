@@ -11,7 +11,7 @@ df_data = read.csv("data/reactdata.csv") %>%
 
 # Load estimates
 df_steyn = read.csv("paper/outputs/3-react/steynRt_r1to19_states.csv") %>%
-  mutate(Method="Novel", date=as.Date(date)) %>%
+  mutate(Method="SIMPLE", date=as.Date(date)) %>%
   select(variable, date, mean, lower, upper, Method)  %>%
   filter(variable %in% c("Rt","It", "Pt", "nPos"))
 
@@ -32,7 +32,7 @@ df_eales_shifted = df_eales %>%
 # Combine
 df = rbind(df_steyn, df_eales, df_eales_shifted, df_abbott) %>% 
   left_join(df_data %>% select(date, nSamples, nPos, obsPos, round), by="date") %>%
-  mutate(Method = factor(Method, levels=c("Novel", "Eales", "Eales (shifted)", "Abbott")))
+  mutate(Method = factor(Method, levels=c("SIMPLE", "Eales", "Eales (shifted)", "Abbott")))
 
 # Calculate observed swab positivity and join onto main
 df_swabpos = df %>%
